@@ -33,6 +33,7 @@
 					<h3><%= product.getName() %></h3>
 					<p><%= product.getDescription() %></p>
 					<p><%= product.getUnitPrice() %> 원 </p>
+					<p><a href="product.jsp?id=<%= product.getId() %>" class = "btn btn-secondary">상세 정보 &raquo;</a></p>
 				</div>
 				<%
 				}
@@ -47,3 +48,4 @@
 	out.print(products);
 	%> --%>
 </body>
+</html>

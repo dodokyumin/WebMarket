@@ -31,6 +31,7 @@ public class Product extends Object {
 		this.name = name;
 		this.unitPrice = unitPrice;
 	}
+	
 
 
 	public String getId() {
