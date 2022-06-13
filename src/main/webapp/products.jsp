@@ -1,8 +1,6 @@
-<%@page import="java.text.SimpleDateFormat"%>
-<%@ page import="java.util.Date"%>
-<%@ page import="java.util.List"%>
-<%@ page import="com.webmarket.data.ProductRepository"%>
-<%@ page import="com.webmarket.domain.model.Product"%>
+<%@page import="com.webmarket.data.ProductRepository"%>
+<%@page import="com.webmarket.domain.model.Product"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -28,7 +26,7 @@
 			<div class="row" align="center">
 				<%
 					List<Product> products = repository.getAllProducts();
-					for(int i = 0; products.size(); i++){
+					for(int i = 0; i < products.size(); i++){
 						Product product = products.get(i);
 				%>
 				<div class="col-md-4">
