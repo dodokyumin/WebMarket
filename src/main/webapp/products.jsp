@@ -4,8 +4,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:useBean id="repository"
-	class="com.webmarket.data.ProductRepository" scope="session"></jsp:useBean>
+<%-- <jsp:useBean id="repository"
+	class="com.webmarket.data.ProductRepository" scope="session"></jsp:useBean> --%>
 <html>
 <head>
 <meta charset="UTF-8" />
@@ -18,6 +18,10 @@
 <body>
 <div class="p-5 bg-primary text-white">
       <div class="container">
+      <%
+      String name = (String) session.getAttribute("name");
+      
+      %>
         <h1 class="display-3">상품목록</h1>
       </div>
     </div>
@@ -25,6 +29,14 @@
     <div class="contianer">
 			<div class="row" align="center">
 				<%
+				//세션 사용해보기
+				//String name = (String) session.getAttribute("name");
+	            //int age = (int) session.getAttribute("age");
+	            
+	            out.print(session.getAttribute("foods"));
+	            
+				//싱글턴 패턴
+					ProductRepository repository = ProductRepository.getInstance();
 					List<Product> products = repository.getAllProducts();
 					for(int i = 0; i < products.size(); i++){
 						Product product = products.get(i);
