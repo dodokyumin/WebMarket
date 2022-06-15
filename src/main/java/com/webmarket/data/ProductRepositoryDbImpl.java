@@ -15,19 +15,22 @@ public class ProductRepositoryDbImpl implements ProductRepository {
 
     @Override
     public List<Product> getAllProducts() {
-        return Collections.emptyList();
+        return dao.getAll();
     }
 
     @Override
     public Product getProductById(String id) {
-        // TODO Auto-generated method stub
-        return null;
+    	return getAllProducts().stream()
+    			.filter((product) -> product.getId().equals(id))
+    			.findFirst()
+    			.get();
     }
 
     @Override
     public void addProduct(Product product) {
         // TODO Auto-generated method stub
+    	dao.insert(product);
 
     }
-
+    
 }
